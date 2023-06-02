@@ -7,7 +7,7 @@
 
 This repository contains the solution to the first practical exercise from Lesson 1.
 
-## How To Run
+## How To Run
 
 Follow the below steps to run the script on your machine:
 
