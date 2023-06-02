@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node tests/test.js"
+    "first-test": "node tests/first-test.js",
+    "login-success": "node tests/login-success.js",
+    "login-failure-username": "node tests/login-failed-username.js",
+    "login-failure-password": "node tests/login-failed-password.js"
   },
   "author": "",
   "license": "ISC",
