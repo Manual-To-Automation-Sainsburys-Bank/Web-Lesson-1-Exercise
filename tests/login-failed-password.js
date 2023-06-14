@@ -1,4 +1,4 @@
-const {By,Key,Builder,until} = require("selenium-webdriver");
+const {By,Builder,until} = require("selenium-webdriver");
 const assert = require('assert');
 require("chromedriver");
  
@@ -16,13 +16,12 @@ async function failed_login() {
         await driver.findElement(By.css("#username")).sendKeys(username);
         await driver.findElement(By.css("#password")).sendKeys(password);
         await driver.findElement(By.css("#submit")).click();
-
-        await new Promise(res => setTimeout(res, 3000));
  
-        //Verify the page title and print it
-        let errorElementText = await driver.findElement(By.id('error')).getText();
+        // Get the text from the error element which should now be present.
+        let errorElementText = await driver.wait(until.elementLocated(By.css('#error')),10000).getText();
         console.log(errorElementText);
 
+        // Assert that the text in the error message is correct
         assert(errorElementText.includes("password is invalid"));
         
 
